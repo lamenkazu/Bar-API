@@ -10,8 +10,8 @@
 
 - [x] Admin
 
-  - **[x]** Deve ser possível criar uma nova conta no sistema;
-  - [**x**] Deve ser possível listar todas as contas do sistema;
+  - **[ x ]** Deve ser possível criar uma nova conta no sistema;
+  - [** x **] Deve ser possível listar todas as contas do sistema;
   - [x] Deve ser possível pegar os dados de qualquer usuário do sistema;
   - [x] Deve ser possível deletar um usuário do sistema;
   - [x] Deve ser possível atualizar a contra de outro usuário;
