@@ -8,7 +8,7 @@
 - [x] Deve ser possível cadastrar usuário como ser um Administrador do Sistema;
 - [x] Deve ser possível criar uma sessão no sistema;
 
-- [ ] Admin
+- [x] Admin
 
   - [x] Deve ser possível criar uma nova conta no sistema;
   - [ ] Deve ser possível atualizar a contra de outro usuário;
@@ -16,7 +16,7 @@
   - [ ] Deve ser possível listar todas as contas do sistema;
   - [ ] Deve ser possível pegar os dados de qualquer usuário do sistema;
 
-- [ ] Todos
+- [x] Admin e Common
   - [ ] Deve ser possível atualizar sua própria conta no sistema
   - [ ] Deve ser possível listar os dados da sua própria conta;
   - [ ] Deve ser possível validar um usuário no sistema;
@@ -98,7 +98,7 @@
 ## Autenticação (TODO):
 
 - [x] Ao Iniciar o sistema pela primeira vez, deve ser possível acessar a conta de um admin existente;
-- [ ] O sistema não pode ficar sem um usuário administrador;
+- [x] O sistema não pode ficar sem um usuário administrador;
 - [x] Só deve ser possível criar uma nova conta se você estiver autenticado como administrador;
 
 ## Rota de Vendas:

@@ -11,6 +11,7 @@ const UserCommonController = require("../controllers/Users/UserCommonController"
 // Importar middleware
 
 const usersRoutes = Router();
+const usersAdminRoutes = Router();
 
 // Instanciar Controllers
 const usersAdminController = new UserAdminController();
@@ -25,10 +26,14 @@ usersRoutes.put("/edit", usersCommonController.updateSelf); //Atualiza sua próp
 usersRoutes.get("/", usersCommonController.getYourself); //Atualiza sua própria conta no sistema;
 
 //Admin
-usersRoutes.post("/admin", usersAdminController.create); //Cria uma nova conta no sistema;
-usersRoutes.get("/admin", usersAdminController.index); //Pega todas as contas do sistema;
-usersRoutes.get("/admin/:id", usersAdminController.show); //Pega uma conta do sistema para checar detalhes;
-usersRoutes.delete("/admin/:id", usersAdminController.delete); //Deleta um usuário do sistema;
-usersRoutes.put("/admin/edit/:id", usersAdminController.updateSome); //Altera os dados de algum usuário do sistema;
+usersAdminRoutes.use(ensureAuthorization(["admin"]));
+
+usersAdminRoutes.post("/admin", usersAdminController.create); //Cria uma nova conta no sistema; OK
+usersAdminRoutes.get("/admin", usersAdminController.index); //Pega todas as contas do sistema;
+usersAdminRoutes.get("/admin/:id", usersAdminController.show); //Pega uma conta do sistema para checar detalhes;
+usersAdminRoutes.delete("/admin/:id", usersAdminController.delete); //Deleta um usuário do sistema;
+usersAdminRoutes.put("/admin/edit/:id", usersAdminController.updateSome); //Altera os dados de algum usuário do sistema;
+
+usersRoutes.use(usersAdminRoutes);
 
 module.exports = usersRoutes;
