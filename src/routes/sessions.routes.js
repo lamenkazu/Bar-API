@@ -1,15 +1,15 @@
-import { Router } from "express";
+const { Router } = require("express");
 
-//Import Controllers
-import { SessionController } from "../controllers/SessionController.js";
+// Importar Controllers
+const SessionController = require("../controllers/SessionController");
 
-//Import middleware
+// Importar middleware
 
 const sessionsRoutes = Router();
 
-//Instanciar Controllers
+// Instanciar Controllers
 const sessionsController = new SessionController();
 
-//Rotas
+// Rotas
 
-export { sessionsRoutes };
+module.exports = sessionsRoutes;

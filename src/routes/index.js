@@ -1,9 +1,9 @@
-import { Router } from "express";
+const { Router } = require("express");
 
-import { usersRoutes } from "./users.routes.js";
-import { sessionsRoutes } from "./sessions.routes.js";
-import { salesRoutes } from "./sales.routes.js";
-import { stockRoutes } from "./stock.routes.js";
+const usersRoutes = require("./users.routes");
+const sessionsRoutes = require("./sessions.routes");
+const salesRoutes = require("./sales.routes");
+const stockRoutes = require("./stock.routes");
 
 const routes = Router();
 
@@ -12,4 +12,4 @@ routes.use("/sessions", sessionsRoutes);
 routes.use("/sales", salesRoutes);
 routes.use("/stock", stockRoutes);
 
-export { routes };
+module.exports = routes;

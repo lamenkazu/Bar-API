@@ -1,7 +1,7 @@
-import { AppError } from "./../../utils/AppError.js";
+const AppError = require("../../utils/AppError");
 
-export class StockCommonServices {
+module.exports = class StockCommonServices {
   constructor(stockRepo) {
     this.stockRepo = stockRepo;
   }
-}
+};

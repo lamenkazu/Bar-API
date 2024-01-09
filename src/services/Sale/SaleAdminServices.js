@@ -1,7 +1,7 @@
-import { AppError } from "./../../utils/AppError.js";
+const AppError = require("../../utils/AppError");
 
-export class SaleAdminServices {
+module.exports = class SaleAdminServices {
   constructor(saleRepo) {
     this.saleRepo = saleRepo;
   }
-}
+};

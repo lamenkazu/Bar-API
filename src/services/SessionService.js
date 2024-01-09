@@ -1,7 +1,7 @@
-import { AppError } from "./../utils/AppError.js";
+const AppError = require("../utils/AppError");
 
-export class SessionService {
+module.exports = class SessionService {
   constructor(sessionRepo) {
     this.sessionRepo = sessionRepo;
   }
-}
+};

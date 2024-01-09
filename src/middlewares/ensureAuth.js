@@ -1,9 +1,9 @@
-import { verify } from "jsonwebtoken";
-import { AppError } from "../utils/AppError";
-import { authConfig } from "./../configs/auth";
+const { verify } = require("jsonwebtoken");
+const { AppError } = require("../utils/AppError");
+const { authConfig } = require("./../configs/auth");
 
 const ensureAuthentication = (req, res, next) => {};
 
 const ensureAuthorization = (roleToVerify) => {};
 
-export { ensureAuthentication, ensureAuthorization };
+module.exports = { ensureAuthentication, ensureAuthorization };

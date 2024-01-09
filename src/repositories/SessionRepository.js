@@ -1,1 +1,1 @@
-export class SessionRepository {}
+module.exports = class SessionRepository {};

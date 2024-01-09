@@ -1,17 +1,17 @@
-import { Router } from "express";
+const { Router } = require("express");
 
-//Import Controllers
-import { UserAdminController } from "../controllers/UserController/UserAdminController.js";
-import { UserCommonController } from "../controllers/UserController/UserCommonController.js";
+// Importar Controllers
+const UserAdminController = require("../controllers/Users/UserAdminController");
+const UserCommonController = require("../controllers/Users/UserCommonController");
 
-//Import middleware
+// Importar middleware
 
 const usersRoutes = Router();
 
-//Instanciar Controllers
+// Instanciar Controllers
 const usersAdminController = new UserAdminController();
 const usersCommonController = new UserCommonController();
 
-//Rotas
+// Rotas
 
-export { usersRoutes };
+module.exports = usersRoutes;

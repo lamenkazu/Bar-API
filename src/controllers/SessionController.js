@@ -1,4 +1,4 @@
-import { SessionRepository } from "./../repositories/SessionRepository.js";
-import { SessionService } from "./../services/SessionService.js";
+const SessionRepository = require("./../repositories/SessionRepository");
+const SessionService = require("./../services/SessionService");
 
-export class SessionController {}
+module.exports = class SessionController {};

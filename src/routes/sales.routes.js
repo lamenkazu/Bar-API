@@ -1,17 +1,17 @@
-import { Router } from "express";
+const { Router } = require("express");
 
-//Import Controllers
-import { SalesAdminController } from "./../controllers/SalesController/SalesAdminController.js";
-import { SalesCommonController } from "./../controllers/SalesController/SalesCommonController.js";
+// Importar Controllers
+const SalesAdminController = require("../controllers/Sales/SalesAdminController");
+const SalesCommonController = require("../controllers/Sales/SalesCommonController");
 
-//Import middleware
+// Importar middleware
 
 const salesRoutes = Router();
 
-//Instanciar Controllers
+// Instanciar Controllers
 const salesAdminController = new SalesAdminController();
 const salesCommonController = new SalesCommonController();
 
-//Rotas
+// Rotas
 
-export { salesRoutes };
+module.exports = salesRoutes;

@@ -1,15 +1,15 @@
-import { Router } from "express";
+const { Router } = require("express");
 
-//Import Controllers
-import { StockAdminController } from "./../controllers/StockController/StockAdminController.js";
-import { StockCommonController } from "./../controllers/StockController/StockCommonController.js";
+// Importar Controllers
+const StockAdminController = require("../controllers/Stock/StockAdminController");
+const StockCommonController = require("../controllers/Stock/StockCommonController");
 
-//Import middleware
+// Importar middleware
 
 const stockRoutes = Router();
 
-//Instanciar Controllers
+// Instanciar Controllers
 const stockAdminController = new StockAdminController();
 const stockCommonController = new StockCommonController();
 
-export { stockRoutes };
+module.exports = stockRoutes;

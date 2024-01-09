@@ -1,1 +1,1 @@
-export class SaleCommonRepository {}
+module.exports = class SaleCommonRepository {};
