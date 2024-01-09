@@ -11,5 +11,6 @@ const sessionsRoutes = Router();
 const sessionsController = new SessionController();
 
 // Rotas
+sessionsRoutes.post("/", sessionsController.create);
 
 module.exports = sessionsRoutes;
