@@ -3,7 +3,7 @@ const { compare } = require("bcryptjs");
 const { sign } = require("jsonwebtoken");
 const authConfig = require("../configs/auth");
 
-const errorFromUser = new AppError("E-mail e/ou senha incorreta.", 401);
+const errorFromUser = new AppError("CPF e/ou senha incorreta.", 401);
 
 module.exports = class SessionService {
   constructor(sessionRepo) {
@@ -16,7 +16,7 @@ module.exports = class SessionService {
     const user = await it.findUser(cpf);
     if (!user) throw errorFromUser;
 
-    if (!cpf === "admin") {
+    if (!(cpf === "admin")) {
       const passwordMatched = await compare(password, user.password);
       if (!passwordMatched) throw errorFromUser;
     }

@@ -36,10 +36,10 @@ module.exports = class UserAdminController {
   async show(req, res) {
     const { id } = req.params;
 
-    const userAdminRepo = new UserAdminRepository();
-    const userAdminServices = new UserAdminServices(userAdminRepo);
+    const userRepo = new UserAdminRepository();
+    const userServices = new UserAdminServices(userRepo);
 
-    const user = await userAdminServices.executeShow(id);
+    const user = await userServices.executeShow(id);
 
     return res.json(user);
   }
@@ -47,10 +47,10 @@ module.exports = class UserAdminController {
   async delete(req, res) {
     const { id } = req.params;
 
-    const userAdminRepo = new UserAdminRepository();
-    const userAdminServices = new UserAdminServices(userAdminRepo);
+    const userRepo = new UserAdminRepository();
+    const userServices = new UserAdminServices(userRepo);
 
-    await userAdminServices.executeDelete(id);
+    await userServices.executeDelete(id);
 
     return res.json();
   }
@@ -59,10 +59,10 @@ module.exports = class UserAdminController {
     const { name, cpf, password, role } = req.body;
     const { id } = req.params;
 
-    const userAdminRepo = new UserAdminRepository();
-    const userAdminServices = new UserAdminServices(userAdminRepo);
+    const userRepo = new UserAdminRepository();
+    const userServices = new UserAdminServices(userRepo);
 
-    await userAdminServices.executeUpdateSome({
+    await userServices.executeUpdateSome({
       id,
       name,
       cpf,
