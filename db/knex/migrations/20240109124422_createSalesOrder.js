@@ -1,6 +1,6 @@
 exports.up = (knex) =>
   knex.schema.createTable("orders", (table) => {
-    table.uuid("id").primary().defaultTo(knex.raw("uuid_generate_v4()"));
+    table.uuid("order_id").primary().defaultTo(knex.fn.uuid());
     table.text("user_id").references("id").inTable("users");
 
     table.jsonb("products").defaultTo([]);
@@ -10,7 +10,6 @@ exports.up = (knex) =>
     table.enum("status", ["open", "closed"]).defaultTo("open").notNullable();
 
     table.timestamp("created_at").default(knex.fn.now());
-    table.timestamp("updated_at").default(knex.fn.now());
   });
 
 exports.down = (knex) => knex.schema.dropTable("orders");

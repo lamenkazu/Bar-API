@@ -11,7 +11,7 @@
 
 ### \*Gestão de Produtos:
 
-- [ ] \*Tabela de Produtos
+- [x] \*Tabela de Produtos
   - [ ] Adicionar Produto;
   - [ ] Editar Produto;
   - [ ] Excluir Produto;
@@ -20,7 +20,8 @@
 
 ### \*Gestão de Pedidos de Venda:
 
-- [ ] \*Criar um novo pedido de compra;
+- [x] \*Tabela de Pedidos de Venda
+- [ ] \*Criar um novo pedido de Venda;
 - [ ] \*Adicionar produtos a um pedido existente;
 - [ ] \*Remover produtos de um pedido;
 - [ ] \*Visualizar detalhes de um pedido específico;
