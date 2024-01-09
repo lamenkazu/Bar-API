@@ -11,10 +11,10 @@
 - [x] Admin
 
   - [x] Deve ser possível criar uma nova conta no sistema;
-  - [ ] Deve ser possível atualizar a contra de outro usuário;
-  - [ ] Deve ser possível deletar um usuário do sistema;
-  - [ ] Deve ser possível listar todas as contas do sistema;
-  - [ ] Deve ser possível pegar os dados de qualquer usuário do sistema;
+  - [x] Deve ser possível listar todas as contas do sistema;
+  - [x] Deve ser possível pegar os dados de qualquer usuário do sistema;
+  - [x] Deve ser possível deletar um usuário do sistema;
+  - [x] Deve ser possível atualizar a contra de outro usuário;
 
 - [x] Admin e Common
   - [ ] Deve ser possível atualizar sua própria conta no sistema
