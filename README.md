@@ -4,8 +4,22 @@
 
 ## \*Rotas de Autenticação e Autorização
 
-- [ ] Deve ser possível se cadastrar como freelancer.
-- [ ] Deve ser possível ser um administrador do sistema.
+- [x] Deve ser possível cadastrar usuário como Comum;
+- [x] Deve ser possível cadastrar usuário como ser um Administrador do Sistema;
+- [ ] Deve ser possível criar uma sessão no sistema;
+
+- [ ] Admin
+
+  - [x] Deve ser possível criar uma nova conta no sistema;
+  - [ ] Deve ser possível atualizar a contra de outro usuário;
+  - [ ] Deve ser possível deletar um usuário do sistema;
+  - [ ] Deve ser possível listar todas as contas do sistema;
+  - [ ] Deve ser possível pegar os dados de qualquer usuário do sistema;
+
+- [ ] Todos
+  - [ ] Deve ser possível atualizar sua própria conta no sistema
+  - [ ] Deve ser possível listar os dados da sua própria conta;
+  - [ ] Deve ser possível validar um usuário no sistema;
 
 ## \*Rota de Vendas
 
@@ -83,7 +97,11 @@
 
 ## Autenticação (TODO):
 
-- [ ]
+- [ ] Só deve ser possível criar uma nova conta se você estiver autenticado como administrador;
+- [ ] Só deve ser possível listar todos os usuários se você for administrador;
+- [ ] Apenas administradores podem deletar um usuário
+- [ ] Apenas Administradores devem alterar os dados de algum usuário que não ele próprio;
+- [ ] Só deve ser possível pegar dados de um único usuário como administrador OU em caso de usuário comum, o seu próprio;
 
 ## Rota de Vendas:
 

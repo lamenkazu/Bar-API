@@ -5,4 +5,6 @@ module.exports = class UserCommonController {
   async validate(req, res) {}
 
   async updateSelf(req, res) {}
+
+  async getYourself(req, res) {}
 };
