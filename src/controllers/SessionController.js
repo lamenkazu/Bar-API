@@ -8,6 +8,15 @@ module.exports = class SessionController {
     const sessionRepo = new SessionRepository();
     const sessionService = new SessionService(sessionRepo);
 
-    return res.status(201).json({ cpf, password });
+    const { token, user } = await sessionService.execute({ cpf, password });
+
+    res.cookie("token", token, {
+      httpOnly: true, //Não pode ser acessado por scripts, aumentando a segurança
+      sameSite: "none",
+      secure: true,
+      maxAge: 24 * 60 * 60 * 1000, //Tempo de validade do cookie
+    });
+
+    res.status(201).json({ user });
   }
 };

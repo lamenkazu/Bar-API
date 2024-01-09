@@ -6,7 +6,7 @@
 
 - [x] Deve ser possível cadastrar usuário como Comum;
 - [x] Deve ser possível cadastrar usuário como ser um Administrador do Sistema;
-- [ ] Deve ser possível criar uma sessão no sistema;
+- [x] Deve ser possível criar uma sessão no sistema;
 
 - [ ] Admin
 
