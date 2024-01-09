@@ -8,8 +8,8 @@ import { stockRoutes } from "./stock.routes.js";
 const routes = Router();
 
 routes.use("/users", usersRoutes);
-// routes.use("/sessions", sessionsRoutes);
-// routes.use("/sales", salesRoutes);
-// routes.use("/stock", stockRoutes);
+routes.use("/sessions", sessionsRoutes);
+routes.use("/sales", salesRoutes);
+routes.use("/stock", stockRoutes);
 
 export { routes };
