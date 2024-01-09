@@ -97,11 +97,9 @@
 
 ## Autenticação (TODO):
 
-- [ ] Só deve ser possível criar uma nova conta se você estiver autenticado como administrador;
-- [ ] Só deve ser possível listar todos os usuários se você for administrador;
-- [ ] Apenas administradores podem deletar um usuário
-- [ ] Apenas Administradores devem alterar os dados de algum usuário que não ele próprio;
-- [ ] Só deve ser possível pegar dados de um único usuário como administrador OU em caso de usuário comum, o seu próprio;
+- [x] Ao Iniciar o sistema pela primeira vez, deve ser possível acessar a conta de um admin existente;
+- [ ] O sistema não pode ficar sem um usuário administrador;
+- [x] Só deve ser possível criar uma nova conta se você estiver autenticado como administrador;
 
 ## Rota de Vendas:
 

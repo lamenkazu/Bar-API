@@ -1,4 +1,8 @@
 const { Router } = require("express");
+const {
+  ensureAuthentication,
+  ensureAuthorization,
+} = require("../middlewares/ensureAuth");
 
 // Importar Controllers
 const UserAdminController = require("../controllers/Users/UserAdminController");
@@ -13,6 +17,7 @@ const usersAdminController = new UserAdminController();
 const usersCommonController = new UserCommonController();
 
 // Rotas
+usersRoutes.use(ensureAuthentication);
 
 //Todos
 usersRoutes.get("/validate", usersCommonController.validate); //Valida o usuário no sistema;
