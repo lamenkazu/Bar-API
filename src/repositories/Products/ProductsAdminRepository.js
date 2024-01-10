@@ -11,7 +11,17 @@ module.exports = class ProductsAdminRepository {
     });
   }
 
-  async update() {}
+  async update({ userId, id, name, price, category }) {
+    return await knex("products").where({ id }).update({
+      name,
+      price,
+      category,
+      updated_by: userId,
+      updated_at: knex.fn.now(),
+    });
+  }
 
-  async delete() {}
+  async delete({ id }) {
+    return await knex("products").where({ id }).first().delete();
+  }
 };

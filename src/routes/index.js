@@ -2,9 +2,9 @@ const { Router } = require("express");
 
 const usersRoutes = require("./users.routes");
 const sessionsRoutes = require("./sessions.routes");
+const productsRoutes = require("./products.routes");
 const salesRoutes = require("./sales.routes");
 const stockRoutes = require("./stock.routes");
-const productsRoutes = require("./products.routes");
 
 const routes = Router();
 

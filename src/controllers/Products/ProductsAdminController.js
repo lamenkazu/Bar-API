@@ -20,10 +20,32 @@ module.exports = class SalesAdminController {
   }
 
   async update(req, res) {
+    const { id } = req.user; // ID do usuário que está atualizando o produto no sistema
+    const { name, price, category } = req.body; //Dados do produto a serem atualizados no sistema
+    const { prod_id } = req.params;
+
+    const productRepo = new ProductsAdminRepository();
+    const productServices = new ProductsAdminServices(productRepo);
+
+    await productServices.executeUpdate({
+      userId: id,
+      id: prod_id,
+      name,
+      price,
+      category,
+    });
+
     return res.json();
   }
 
   async delete(req, res) {
+    const { prod_id } = req.params;
+
+    const productRepo = new ProductsAdminRepository();
+    const productServices = new ProductsAdminServices(productRepo);
+
+    await productServices.executeDelete({ id: prod_id });
+
     return res.json();
   }
 };

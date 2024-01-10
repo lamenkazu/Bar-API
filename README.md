@@ -29,8 +29,8 @@
 
   - [x] \*Tabela de Produtos
     - [x] Adicionar Produto;
-    - [ ] Editar Produto;
-    - [ ] Excluir Produto;
+    - [x] Editar Produto;
+    - [x] Excluir Produto;
 
 - [] Common
 - [ ] \*Listar todos os produtos disponíveis por query de pesquisas;
