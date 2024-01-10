@@ -25,7 +25,7 @@
 
 ### \*Gestão de Produtos:
 
-- [] Admin
+- [x] Admin
 
   - [x] \*Tabela de Produtos
     - [x] Adicionar Produto;
@@ -33,17 +33,17 @@
     - [x] Excluir Produto;
 
 - [] Common
-- [ ] \*Listar todos os produtos disponíveis por query de pesquisas;
-- [ ] \*Recuperar informações detalhadas sobre um produto específico;
+  - [x] \*Listar todos os produtos disponíveis por query de pesquisas;
+  - [x] Recuperar informações detalhadas sobre um produto específico;
 
 ### \*Gestão de Pedidos de Venda:
 
 - [x] \*Tabela de Pedidos de Venda
-- [ ] \*Criar um novo pedido de Venda;
-- [ ] \*Adicionar produtos a um pedido existente;
-- [ ] \*Remover produtos de um pedido;
-- [ ] \*Visualizar detalhes de um pedido específico;
-- [ ] \*Finalizar um pedido como pago (cartão (cred/deb), pix, dinheiro);
+  - [ ] \*Criar um novo pedido de Venda;
+  - [ ] \*Adicionar produtos a um pedido existente;
+  - [ ] \*Remover produtos de um pedido;
+  - [ ] \*Visualizar detalhes de um pedido específico;
+  - [ ] \*Finalizar um pedido como pago (cartão (cred/deb), pix, dinheiro);
 
 ### \*Relatórios e Estatísticas:
 
