@@ -28,7 +28,7 @@ usersRoutes.get("/", usersCommonController.getYourself); //Pega os dados da pró
 //Admin
 usersAdminRoutes.use(ensureAuthorization(["admin"]));
 
-usersAdminRoutes.post("/admin", usersAdminController.create); //Cria uma nova conta no sistema; OK
+usersAdminRoutes.post("/admin", usersAdminController.create); //Cria uma nova conta no sistema;
 usersAdminRoutes.get("/admin", usersAdminController.index); //Pega todas as contas do sistema;
 usersAdminRoutes.get("/admin/:id", usersAdminController.show); //Pega uma conta do sistema para checar detalhes;
 usersAdminRoutes.delete("/admin/:id", usersAdminController.delete); //Deleta um usuário do sistema;

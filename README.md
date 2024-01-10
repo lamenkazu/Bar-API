@@ -25,12 +25,16 @@
 
 ### \*Gestão de Produtos:
 
-- [x] \*Tabela de Produtos
-  - [ ] Adicionar Produto;
-  - [ ] Editar Produto;
-  - [ ] Excluir Produto;
-- [ ] \*Recuperar informações detalhadas sobre um produto específico;
+- [] Admin
+
+  - [x] \*Tabela de Produtos
+    - [x] Adicionar Produto;
+    - [ ] Editar Produto;
+    - [ ] Excluir Produto;
+
+- [] Common
 - [ ] \*Listar todos os produtos disponíveis por query de pesquisas;
+- [ ] \*Recuperar informações detalhadas sobre um produto específico;
 
 ### \*Gestão de Pedidos de Venda:
 
