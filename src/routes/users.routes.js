@@ -1,23 +1,23 @@
 const { Router } = require("express");
-const {
-  ensureAuthentication,
-  ensureAuthorization,
-} = require("../middlewares/ensureAuth");
 
 // Importar Controllers
 const UserAdminController = require("../controllers/Users/UserAdminController");
 const UserCommonController = require("../controllers/Users/UserCommonController");
 
 // Importar middleware
-
-const usersRoutes = Router();
-const usersAdminRoutes = Router();
+const {
+  ensureAuthentication,
+  ensureAuthorization,
+} = require("../middlewares/ensureAuth");
 
 // Instanciar Controllers
 const usersAdminController = new UserAdminController();
 const usersCommonController = new UserCommonController();
 
 // Rotas
+const usersRoutes = Router();
+const usersAdminRoutes = Router();
+
 usersRoutes.use(ensureAuthentication);
 
 //Todos
