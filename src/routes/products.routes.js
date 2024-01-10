@@ -31,4 +31,6 @@ productsAdminRoutes.post("/admin", productsAdminController.create); //Cria um no
 productsAdminRoutes.put("/admin/:prod_id", productsAdminController.update); //Atualiza um produto existente
 productsAdminRoutes.delete("/admin/:prod_id", productsAdminController.delete); //Deleta um produto existente
 
+productsRoutes.use(productsAdminRoutes);
+
 module.exports = productsRoutes;
