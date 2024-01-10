@@ -20,6 +20,6 @@ module.exports = class ProductsCommonServices {
     const product = await it.show({ id });
     if (!product) throw new AppError("Nenhum produto encontrado", 404);
 
-    return { product };
+    return product;
   }
 };

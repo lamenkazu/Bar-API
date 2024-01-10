@@ -5,19 +5,14 @@ const selectQuery = [
   "products.name",
   "products.price",
   "products.category",
-  "users.name as created_by",
+  "users_created.name as created_by",
+  "users_updated.name as updated_by",
 ];
 
 module.exports = class ProductsCommonRepository {
   async index({ name, category }) {
     const result = await knex("products")
-      .select(
-        "products.id",
-        "products.name",
-        "products.price",
-        "products.category",
-        "users.name as created_by"
-      )
+      .select(selectQuery)
       .innerJoin("users", "products.created_by", "users.id")
       .whereLike("products.name", `%${name}%`)
       .andWhereLike("products.category", `%${category}%`)
@@ -30,7 +25,16 @@ module.exports = class ProductsCommonRepository {
     return await knex("products")
       .select(selectQuery)
       .where({ "products.id": id })
-      .innerJoin("users", "products.created_by", "users.id")
+      .innerJoin(
+        "users as users_created",
+        "products.created_by",
+        "users_created.id"
+      )
+      .innerJoin(
+        "users as users_updated",
+        "products.updated_by",
+        "users_updated.id"
+      )
       .first();
   }
 };
