@@ -8,5 +8,7 @@ module.exports = class SalesController {
 
   async update(req, res) {}
 
+  async getOpenOrders(req, res) {}
+
   async finalizeOrder(req, res) {}
 };

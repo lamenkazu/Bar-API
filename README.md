@@ -25,9 +25,9 @@
 
 ### \*Gestão de Produtos:
 
-- [x] Admin
+- [x] Tabela de Produtos
 
-  - [x] \*Tabela de Produtos
+  - [x] \*Admin
     - [x] Adicionar Produto;
     - [x] Editar Produto;
     - [x] Excluir Produto;
@@ -39,12 +39,16 @@
 ### \*Gestão de Pedidos de Venda:
 
 - [x] \*Tabela de Pedidos de Venda
+
   - [ ] \*Criar um novo pedido de Venda;
-  - [ ] \*Atualizar um pedido de venda
-    - [ ] Adicionar produtos a um pedido existente;
-    - [ ] Remover produtos de um pedido;
   - [ ] \*Visualizar detalhes de um pedido específico;
+  - [ ] \*Atualizar um pedido de venda
+  - [ ] \*Listar todos os pedidos de venda abertos;
   - [ ] \*Finalizar um pedido como pago (cartão (cred/deb), pix, dinheiro);
+
+  - [ ] Admin
+    - [ ] \*Listar todos os pedidos de venda fechados;
+    - [ ] \*Listar todos os pedidos de vendas;
 
 ### \*Relatórios e Estatísticas:
 
