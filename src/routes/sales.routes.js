@@ -1,8 +1,7 @@
 const { Router } = require("express");
 
 // Importar Controllers
-const SalesAdminController = require("../controllers/Sales/SalesAdminController");
-const SalesCommonController = require("../controllers/Sales/SalesCommonController");
+const SalesController = require("../controllers/Sales/SalesController");
 
 // Importar middleware
 const {
@@ -11,18 +10,17 @@ const {
 } = require("../middlewares/ensureAuth");
 
 // Instanciar Controllers
-const salesAdminController = new SalesAdminController();
-const salesCommonController = new SalesCommonController();
+const salesController = new SalesController();
 
 // Rotas
 const salesRoutes = Router();
-const salesAdminRoutes = Router();
 
 salesRoutes.use(ensureAuthentication);
 
 //Todos
-
-//Admin
-salesAdminRoutes.use(ensureAuthorization(["admin"]));
+salesRoutes.post("/", salesController.create); //Criar um novo pedido de venda;
+salesRoutes.get("/:order_id", salesController.show); //Visualizar detalhes de um pedido específico;
+salesRoutes.put("/:order_id", salesController.update); //Atualizar um pedido existente;
+salesRoutes.patch("/:order_id", salesController.finalizeOrder); //Finalizar um pedido como pago
 
 module.exports = salesRoutes;

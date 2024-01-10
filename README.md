@@ -32,7 +32,7 @@
     - [x] Editar Produto;
     - [x] Excluir Produto;
 
-- [] Common
+- [x] Common
   - [x] \*Listar todos os produtos disponíveis por query de pesquisas;
   - [x] Recuperar informações detalhadas sobre um produto específico;
 
@@ -40,8 +40,9 @@
 
 - [x] \*Tabela de Pedidos de Venda
   - [ ] \*Criar um novo pedido de Venda;
-  - [ ] \*Adicionar produtos a um pedido existente;
-  - [ ] \*Remover produtos de um pedido;
+  - [ ] \*Atualizar um pedido de venda
+    - [ ] Adicionar produtos a um pedido existente;
+    - [ ] Remover produtos de um pedido;
   - [ ] \*Visualizar detalhes de um pedido específico;
   - [ ] \*Finalizar um pedido como pago (cartão (cred/deb), pix, dinheiro);
 
