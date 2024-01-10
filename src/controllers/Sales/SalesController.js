@@ -20,7 +20,16 @@ module.exports = class SalesController {
     return res.status(201).json();
   }
 
-  async show(req, res) {}
+  async show(req, res) {
+    const { id } = req.params;
+
+    const salesRepo = new SalesRepository();
+    const salesServices = new SalesServices(salesRepo);
+
+    const order = await salesServices.executeShow(id);
+
+    return res.json(order);
+  }
 
   async update(req, res) {}
 

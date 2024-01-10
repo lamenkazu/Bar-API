@@ -35,8 +35,14 @@ module.exports = class SaleServices {
     return createdOrder;
   }
 
-  async executeShow() {
+  async executeShow(id) {
     const it = this.saleRepo;
+
+    const order = await it.show(id);
+
+    if (!order) throw new AppError("Ordem de venda não encontrada", 404);
+
+    return order;
   }
 
   async executeUpdate() {
