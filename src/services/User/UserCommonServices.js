@@ -6,6 +6,24 @@ module.exports = class UserCommonServices {
     this.userRepo = userRepo;
   }
 
+  async executeValidate(id) {
+    const checkIfUserExsists = await this.userRepo.validate(id);
+    if (!checkIfUserExsists) throw new AppError("Usuário não autorizado", 401);
+    return checkIfUserExsists.id;
+  }
+
+  async executeGetYourself(id) {
+    const it = this.userRepo;
+
+    const userData = await it.getUserData(id);
+    if (!userData)
+      throw new AppError("Houve um problema, dados não encontrados", 401);
+
+    delete userData.password;
+
+    return userData;
+  }
+
   async executeUpdateSelf({ id, name, oldPassword, newPassword }) {
     const it = this.userRepo;
 

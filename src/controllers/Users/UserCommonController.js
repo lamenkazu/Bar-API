@@ -2,7 +2,16 @@ const UserCommonRepository = require("../../repositories/User/UserCommonReposito
 const UserCommonServices = require("../../services/USer/UserCommonServices");
 
 module.exports = class UserCommonController {
-  async validate(req, res) {}
+  async validate(req, res) {
+    const { id } = req.user;
+
+    const userRepo = new UserCommonRepository();
+    const userServices = new UserCommonServices(userRepo);
+
+    const existentUserId = await userServices.executeValidate(id);
+
+    return res.json(existentUserId);
+  }
 
   async updateSelf(req, res) {
     const { id } = req.user;
@@ -21,5 +30,14 @@ module.exports = class UserCommonController {
     return res.json();
   }
 
-  async getYourself(req, res) {}
+  async getYourself(req, res) {
+    const { id } = req.user;
+
+    const userRepo = new UserCommonRepository();
+    const userServices = new UserCommonServices(userRepo);
+
+    const user = await userServices.executeGetYourself(id);
+
+    return res.json(user);
+  }
 };

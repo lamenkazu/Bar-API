@@ -23,7 +23,7 @@ usersRoutes.use(ensureAuthentication);
 //Todos
 usersRoutes.get("/validate", usersCommonController.validate); //Valida o usuário no sistema;
 usersRoutes.put("/edit", usersCommonController.updateSelf); //Atualiza sua própria conta no sistema;
-usersRoutes.get("/", usersCommonController.getYourself); //Atualiza sua própria conta no sistema;
+usersRoutes.get("/", usersCommonController.getYourself); //Pega os dados da própria conta;
 
 //Admin
 usersAdminRoutes.use(ensureAuthorization(["admin"]));
