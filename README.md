@@ -4,9 +4,10 @@
 
 ## \*Rotas de Autenticação e Autorização
 
-- [x] Deve ser possível cadastrar usuário como Comum;
-- [x] Deve ser possível cadastrar usuário como ser um Administrador do Sistema;
 - [x] Deve ser possível criar uma sessão no sistema;
+- [x] Ao Iniciar o sistema pela primeira vez, deve ser possível acessar a conta de um admin existente;
+- [x] O sistema não pode ficar sem um usuário administrador;
+- [x] Só deve ser possível criar uma nova conta se você estiver autenticado como administrador;
 
 - [x] Admin
 
@@ -40,7 +41,7 @@
 
 - [x] \*Tabela de Pedidos de Venda
 
-  - [ ] \*Criar um novo pedido de Venda;
+  - [x] \*Criar um novo pedido de Venda;
   - [ ] \*Visualizar detalhes de um pedido específico;
   - [ ] \*Atualizar um pedido de venda
   - [ ] \*Listar todos os pedidos de venda abertos;
@@ -50,10 +51,10 @@
     - [ ] \*Listar todos os pedidos de venda fechados;
     - [ ] \*Listar todos os pedidos de vendas;
 
-### \*Relatórios e Estatísticas:
+### Relatórios e Estatísticas:
 
-- [ ] \*Visualizar estatísticas de produtos mais vendidos;
-- [ ] \*Acessar dados históricos de pedidos;
+- [ ] Visualizar estatísticas de produtos mais vendidos;
+- [ ] Acessar dados históricos de pedidos;
 - [ ] Gerar relatórios de vendas diárias, semanais e mensais;
 
 ### Processamento de Pagamentos:
@@ -105,10 +106,6 @@
 # Regras de Negócio
 
 ## Autenticação (TODO):
-
-- [x] Ao Iniciar o sistema pela primeira vez, deve ser possível acessar a conta de um admin existente;
-- [x] O sistema não pode ficar sem um usuário administrador;
-- [x] Só deve ser possível criar uma nova conta se você estiver autenticado como administrador;
 
 ## Rota de Vendas:
 
