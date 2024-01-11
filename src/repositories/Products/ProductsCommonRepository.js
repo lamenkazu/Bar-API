@@ -13,7 +13,16 @@ module.exports = class ProductsCommonRepository {
   async index({ name, category }) {
     const result = await knex("products")
       .select(selectQuery)
-      .innerJoin("users", "products.created_by", "users.id")
+      .innerJoin(
+        "users as users_created",
+        "products.created_by",
+        "users_created.id"
+      )
+      .innerJoin(
+        "users as users_updated",
+        "products.updated_by",
+        "users_updated.id"
+      )
       .whereLike("products.name", `%${name}%`)
       .andWhereLike("products.category", `%${category}%`)
       .orderBy("products.updated_at");

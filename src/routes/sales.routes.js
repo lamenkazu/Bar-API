@@ -21,10 +21,10 @@ const salesAdminRoutes = Router();
 salesRoutes.use(ensureAuthentication);
 
 //Todos
+salesRoutes.get("/open", salesController.getOpenOrders); //Atualizar um pedido existente;
 salesRoutes.post("/", salesController.create); //Criar um novo pedido de venda;
 salesRoutes.get("/:id", salesController.show); //Visualizar detalhes de um pedido específico;
-salesRoutes.put("/:id", salesController.update); //Atualizar um pedido existente;
-salesRoutes.get("/open", salesController.getOpenOrders); //Atualizar um pedido existente;
+salesRoutes.put("/:order_id", salesController.update); //Atualizar um pedido existente;
 salesRoutes.patch("/:id", salesController.finalizeOrder); //Finalizar um pedido como pago;
 
 //Admin

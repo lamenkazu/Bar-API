@@ -3,7 +3,7 @@ const SalesServices = require("../../services/Sale/SaleServices");
 
 module.exports = class SalesController {
   async create(req, res) {
-    const { products, total, method, status } = req.body;
+    const { products, total, method } = req.body;
     const { id } = req.user;
 
     const salesRepo = new SalesRepository();
@@ -14,7 +14,6 @@ module.exports = class SalesController {
       products,
       total,
       method,
-      status,
     });
 
     return res.status(201).json();
@@ -31,9 +30,33 @@ module.exports = class SalesController {
     return res.json(order);
   }
 
-  async update(req, res) {}
+  async update(req, res) {
+    const { id } = req.user;
+    const { products, total, method } = req.body;
+    const { order_id } = req.params;
 
-  async getOpenOrders(req, res) {}
+    const salesRepo = new SalesRepository();
+    const salesServices = new SalesServices(salesRepo);
+
+    await salesServices.executeUpdate({
+      userId: id,
+      orderId: order_id,
+      products,
+      total,
+      method,
+    });
+
+    return res.json();
+  }
+
+  async getOpenOrders(req, res) {
+    const salesRepo = new SalesRepository();
+    const salesServices = new SalesServices(salesRepo);
+
+    const openOrders = await salesServices.executeGetOpenOrders();
+
+    return res.json(openOrders);
+  }
 
   async finalizeOrder(req, res) {}
 };

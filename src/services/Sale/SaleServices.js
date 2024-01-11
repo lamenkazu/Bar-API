@@ -5,15 +5,8 @@ module.exports = class SaleServices {
     this.saleRepo = saleRepo;
   }
 
-  async executeCreate({ userId, products, total, method, status }) {
+  async executeCreate({ userId, products, total, method }) {
     const it = this.saleRepo;
-
-    //A ordem não pode ser fechada sem método de pagamento
-    if (!method && status === "closed")
-      throw new AppError(
-        "Não é possível fechar uma ordem sem um método de pagamento especificado",
-        402
-      );
 
     //O método de pagamento, se enviado, deve ser valido;
     const validPaymentMethods = ["credit_card", "debit_card", "cash", "pix"];
@@ -26,7 +19,6 @@ module.exports = class SaleServices {
       products,
       total,
       method,
-      status,
     });
 
     if (!createdOrder)
@@ -45,8 +37,35 @@ module.exports = class SaleServices {
     return order;
   }
 
-  async executeUpdate() {
+  async executeUpdate({ userId, orderId, products, total, method }) {
     const it = this.saleRepo;
+
+    const updatedOrder = await it.update({
+      userId,
+      orderId,
+      products,
+      total,
+      method,
+    });
+
+    if (!updatedOrder)
+      throw new AppError(
+        "Pedido de venda não encontrado para atualização.",
+        404
+      );
+
+    return updatedOrder;
+  }
+
+  async executeGetOpenOrders() {
+    const it = this.saleRepo;
+
+    const openOrders = await it.getOpenOrders();
+
+    if (!openOrders)
+      throw new AppError("Não foram encontradas pedidos de venda abertos", 404);
+
+    return openOrders;
   }
 
   async executeFinalizeOrder() {

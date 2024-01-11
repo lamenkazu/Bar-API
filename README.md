@@ -42,9 +42,9 @@
 - [x] \*Tabela de Pedidos de Venda
 
   - [x] \*Criar um novo pedido de Venda;
-  - [ ] \*Visualizar detalhes de um pedido específico;
-  - [ ] \*Atualizar um pedido de venda
-  - [ ] \*Listar todos os pedidos de venda abertos;
+  - [x] \*Visualizar detalhes de um pedido específico;
+  - [x] \*Atualizar um pedido de venda
+  - [x] \*Listar todos os pedidos de venda abertos;
   - [ ] \*Finalizar um pedido como pago (cartão (cred/deb), pix, dinheiro);
 
   - [ ] Admin
