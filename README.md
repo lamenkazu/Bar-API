@@ -54,7 +54,7 @@
 ### Relatórios e Estatísticas:
 
 - [ ] Visualizar estatísticas de produtos mais vendidos;
-- [ ] Acessar dados históricos de pedidos;
+- [x] Acessar dados históricos de pedidos;
 - [ ] Gerar relatórios de vendas diárias, semanais e mensais;
 
 ### Processamento de Pagamentos:
