@@ -1,5 +1,22 @@
-module.exports = class SAlesAdminController {
-  async getClosedOrders(req, res) {}
+const SalesRepository = require("../../repositories/Sale/SalesRepository");
+const SalesServices = require("../../services/Sale/SaleServices");
 
-  async index(req, res) {}
+module.exports = class SalesAdminController {
+  async index(req, res) {
+    const salesRepo = new SalesRepository();
+    const salesServices = new SalesServices(salesRepo);
+
+    const orders = await salesServices.executeIndex();
+
+    return res.json(orders);
+  }
+
+  async getClosedOrders(req, res) {
+    const salesRepo = new SalesRepository();
+    const salesServices = new SalesServices(salesRepo);
+
+    const closedOrders = await salesServices.executeGetClosedOrders();
+
+    return res.json(closedOrders);
+  }
 };

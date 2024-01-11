@@ -59,10 +59,9 @@ module.exports = class SaleRepository {
     });
   }
 
-  async getOpenOrders() {
-    const openOrders = await knex("orders")
+  async getOrders(status) {
+    const queryOrder = knex("orders")
       .select(selectQuery)
-      .where({ status: "open" })
       .innerJoin(
         "users as users_created",
         "orders.created_by",
@@ -75,10 +74,38 @@ module.exports = class SaleRepository {
       )
       .orderBy("orders.updated_at");
 
-    openOrders.forEach((order) => {
+    if (status) {
+      queryOrder.where({ status });
+    }
+
+    const orders = await queryOrder;
+
+    orders.forEach((order) => {
       order.products = JSON.parse(order.products);
     });
 
-    return openOrders;
+    return orders;
+  }
+
+  async index() {
+    const orders = await knex("orders")
+      .select(selectQuery)
+      .innerJoin(
+        "users as users_created",
+        "orders.created_by",
+        "users_created.id"
+      )
+      .innerJoin(
+        "users as users_updated",
+        "orders.updated_by",
+        "users_updated.id"
+      )
+      .orderBy("orders.updated_at");
+
+    orders.forEach((order) => {
+      order.products = JSON.parse(order.products);
+    });
+
+    return orders;
   }
 };

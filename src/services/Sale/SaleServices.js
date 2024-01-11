@@ -60,12 +60,36 @@ module.exports = class SaleServices {
   async executeGetOpenOrders() {
     const it = this.saleRepo;
 
-    const openOrders = await it.getOpenOrders();
+    const openOrders = await it.getOrders("open");
 
     if (!openOrders)
       throw new AppError("Não foram encontradas pedidos de venda abertos", 404);
 
     return openOrders;
+  }
+
+  async executeGetClosedOrders() {
+    const it = this.saleRepo;
+
+    const closedOrders = await it.getOrders("closed");
+
+    if (!closedOrders)
+      throw new AppError(
+        "Não foram encontrados pedidos de venda finalizados",
+        404
+      );
+
+    return closedOrders;
+  }
+
+  async executeIndex() {
+    const it = this.saleRepo;
+
+    const orders = await it.getOrders();
+
+    if (!orders) throw new AppError("Nenhum pedido de venda encontrado", 404);
+
+    return orders;
   }
 
   async executeFinalizeOrder({ userId, orderId, method }) {

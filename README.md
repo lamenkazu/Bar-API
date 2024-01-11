@@ -47,9 +47,9 @@
   - [x] \*Listar todos os pedidos de venda abertos;
   - [x] \*Finalizar um pedido como pago (cartão (cred/deb), pix, dinheiro);
 
-  - [ ] Admin
-    - [ ] \*Listar todos os pedidos de venda fechados;
-    - [ ] \*Listar todos os pedidos de vendas;
+  - [x] Admin
+    - [x] \*Listar todos os pedidos de vendas;
+    - [x] \*Listar todos os pedidos de venda fechados;
 
 ### Relatórios e Estatísticas:
 
