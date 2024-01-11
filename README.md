@@ -109,11 +109,11 @@
 
 ## Rota de Vendas:
 
-- [ ] Apenas usuários autenticados com autorização de administrador podem adicionar, editar ou excluir produtos;
-- [ ] Todos os usuários autenticados podem recuperar informações sobre produtos;
+- [x] Apenas usuários autenticados com autorização de administrador podem adicionar, editar ou excluir produtos;
+- [x] Todos os usuários autenticados podem recuperar informações sobre produtos;
 
-- [ ] Apenas usuários autenticados podem criar, adicionar, remover ou visualizar pedidos de venda (atuais e histórico);
-- [ ] Um pedido pode ser finalizado como pago marcado por qualquer usuário autenticado (NA VERSÃO MVP);
+- [x] Apenas usuários autenticados podem criar, adicionar, remover ou visualizar pedidos de venda (atuais e histórico);
+- [x] Um pedido pode ser finalizado como pago marcado por qualquer usuário autenticado (NA VERSÃO MVP);
 
 ## Rotas de Estoque
 
