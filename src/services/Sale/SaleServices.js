@@ -68,7 +68,20 @@ module.exports = class SaleServices {
     return openOrders;
   }
 
-  async executeFinalizeOrder() {
+  async executeFinalizeOrder({ userId, orderId, method }) {
     const it = this.saleRepo;
+
+    if (!method)
+      throw new AppError(
+        "O método de pagamento deve ser especificado para a finalização do pedido",
+        400
+      );
+
+    const order = await it.finalizeOrder({ userId, orderId, method });
+
+    if (!order)
+      throw new AppError("Pedido de venda não encontrado para finalizar", 404);
+
+    return order;
   }
 };

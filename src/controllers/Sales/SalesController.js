@@ -58,5 +58,20 @@ module.exports = class SalesController {
     return res.json(openOrders);
   }
 
-  async finalizeOrder(req, res) {}
+  async finalizeOrder(req, res) {
+    const { id } = req.user;
+    const { order_id } = req.params;
+    const { method } = req.body;
+
+    const salesRepo = new SalesRepository();
+    const salesServices = new SalesServices(salesRepo);
+
+    await salesServices.executeFinalizeOrder({
+      userId: id,
+      orderId: order_id,
+      method,
+    });
+
+    return res.json();
+  }
 };

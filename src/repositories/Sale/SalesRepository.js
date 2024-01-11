@@ -51,7 +51,13 @@ module.exports = class SaleRepository {
       });
   }
 
-  async finalizeOrder(req, res) {}
+  async finalizeOrder({ userId, orderId, method }) {
+    return await knex("orders").where({ id: orderId }).update({
+      method,
+      status: "closed",
+      updated_by: userId,
+    });
+  }
 
   async getOpenOrders() {
     const openOrders = await knex("orders")

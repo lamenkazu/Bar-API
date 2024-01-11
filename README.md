@@ -45,7 +45,7 @@
   - [x] \*Visualizar detalhes de um pedido específico;
   - [x] \*Atualizar um pedido de venda
   - [x] \*Listar todos os pedidos de venda abertos;
-  - [ ] \*Finalizar um pedido como pago (cartão (cred/deb), pix, dinheiro);
+  - [x] \*Finalizar um pedido como pago (cartão (cred/deb), pix, dinheiro);
 
   - [ ] Admin
     - [ ] \*Listar todos os pedidos de venda fechados;
