@@ -3,7 +3,7 @@ const UserAdminServices = require("../../services/User/UserAdminServices");
 
 module.exports = class UserAdminController {
   async create(req, res) {
-    const { name, cpf, password, role } = req.body;
+    const { name, cpf, password, role, gender } = req.body;
 
     const userRepo = new UserAdminRepository();
     const userServices = new UserAdminServices(userRepo);
@@ -13,6 +13,7 @@ module.exports = class UserAdminController {
       cpf,
       password,
       role,
+      gender,
     });
 
     return res.status(201).json(newUserId);

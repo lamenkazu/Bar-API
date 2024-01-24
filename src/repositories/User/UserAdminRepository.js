@@ -1,12 +1,13 @@
 const knex = require("../../../db");
 
 module.exports = class UserAdminRepository {
-  async create({ name, cpf, password, role }) {
+  async create({ name, cpf, password, role, gender }) {
     return await knex("users").insert({
       name,
       cpf,
       password,
       role,
+      gender,
     });
   }
 

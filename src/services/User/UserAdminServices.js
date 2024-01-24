@@ -6,7 +6,7 @@ module.exports = class UserAdminServices {
     this.userRepo = userRepo;
   }
 
-  async executeCreate({ name, cpf, password, role }) {
+  async executeCreate({ name, cpf, password, role, gender }) {
     const it = this.userRepo;
 
     if (await it.userCpfIsOnDB(cpf))
@@ -19,6 +19,7 @@ module.exports = class UserAdminServices {
       cpf,
       password: encryptedPassword,
       role,
+      gender,
     });
   }
 
