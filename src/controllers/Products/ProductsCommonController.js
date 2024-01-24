@@ -10,7 +10,7 @@ module.exports = class SalesCommonController {
 
     const products = await productServices.executeIndex({ name, category });
 
-    return res.json(products);
+    return res.json({ products });
   }
 
   async show(req, res) {
