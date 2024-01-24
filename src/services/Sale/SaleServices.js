@@ -37,7 +37,17 @@ module.exports = class SaleServices {
     return order;
   }
 
-  async executeUpdate({ userId, orderId, products, total, method }) {
+  async executeDelete(id) {
+    const it = this.saleRepo;
+
+    const deletedOrder = await it.delete(id);
+
+    if (!deletedOrder) throw new AppError("Ordem de venda não encontrada", 404);
+
+    return deletedOrder;
+  }
+
+  async executeUpdate({ userId, orderId, products, total, to }) {
     const it = this.saleRepo;
 
     const updatedOrder = await it.update({
@@ -45,7 +55,7 @@ module.exports = class SaleServices {
       orderId,
       products,
       total,
-      method,
+      to,
     });
 
     if (!updatedOrder)

@@ -30,9 +30,20 @@ module.exports = class SalesController {
     return res.json(order);
   }
 
+  async delete(req, res) {
+    const { id } = req.params;
+
+    const salesRepo = new SalesRepository();
+    const salesServices = new SalesServices(salesRepo);
+
+    await salesServices.executeDelete(id);
+
+    return res.json();
+  }
+
   async update(req, res) {
     const { id } = req.user;
-    const { products, total, method } = req.body;
+    const { products, total, to } = req.body;
     const { order_id } = req.params;
 
     const salesRepo = new SalesRepository();
@@ -43,7 +54,7 @@ module.exports = class SalesController {
       orderId: order_id,
       products,
       total,
-      method,
+      to,
     });
 
     return res.json();

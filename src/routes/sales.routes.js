@@ -33,5 +33,6 @@ salesRoutes.post("/", salesController.create); //Criar um novo pedido de venda;
 salesRoutes.get("/:id", salesController.show); //Visualizar detalhes de um pedido específico;
 salesRoutes.put("/:order_id", salesController.update); //Atualizar um pedido existente;
 salesRoutes.patch("/:order_id", salesController.finalizeOrder); //Finalizar um pedido como pago;
+salesRoutes.delete("/:id", salesController.delete); //Finalizar um pedido como pago;
 
 module.exports = salesRoutes;

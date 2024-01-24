@@ -5,6 +5,7 @@ const selectQuery = [
   "orders.products",
   "orders.total",
   "orders.method",
+  "orders.to",
   "orders.status",
   "users_created.name as created_by",
   "users_updated.name as updated_by",
@@ -16,6 +17,7 @@ module.exports = class SaleRepository {
       products: JSON.stringify(products),
       total,
       method,
+      to: "",
       created_by: userId,
       updated_by: userId,
     });
@@ -40,13 +42,23 @@ module.exports = class SaleRepository {
     return { ...order, products: JSON.parse(order.products) };
   }
 
-  async update({ userId, orderId, products, total, method }) {
+  async delete(id) {
+    const order = await knex("orders").where({ id });
+
+    if (order.method === "closed") {
+      return;
+    }
+
+    return await knex("orders").where({ id }).delete();
+  }
+
+  async update({ userId, orderId, products, total, to }) {
     return await knex("orders")
       .where({ id: orderId })
       .update({
         products: JSON.stringify(products),
         total,
-        method,
+        to,
         updated_by: userId,
       });
   }
