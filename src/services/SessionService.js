@@ -16,7 +16,7 @@ module.exports = class SessionService {
     const user = await it.findUser(cpf);
     if (!user) throw errorFromUser;
 
-    if (!(cpf === "admin")) {
+    if (cpf !== "admin") {
       const passwordMatched = await compare(password, user.password);
       if (!passwordMatched) throw errorFromUser;
     }

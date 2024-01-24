@@ -17,8 +17,6 @@ module.exports = class SessionController {
       maxAge: 24 * 60 * 60 * 1000, //Tempo de validade do cookie
     });
 
-    console.log(token, user);
-
     res.status(201).json({ user });
   }
 };
